@@ -55,3 +55,22 @@ Air quality measurements are indicative.
 
 Data sources: Open-Meteo, Syngeos, IMGW-PIB, and Wody Polskie Gliwice.
 IMGW data has been processed; operational data may be subject to corrections.
+
+## Waste collection
+
+The waste card covers single-family homes in Szczedrzyk (region 7).
+`public/data/waste.json` is a manually verified transcription of the municipal
+PDF, not a live feed. The 2026 version includes all five regular fractions and
+the Szczedrzyk bulky-waste date; the separate Jedlice bulky date is excluded.
+Containers/bags must be out by 06:00 on collection day.
+
+To update: obtain the current region 7 PDF from the municipal website, transcribe
+its dates into `collections` (`YYYY-MM-DD`, with one or more fraction keys),
+compare every month and fraction visually with the PDF, and update `validFrom`,
+`validUntil`, `verifiedAt`, and `sourceUrl`. Do not extrapolate recurring dates.
+Run `node --experimental-strip-types --test tests/waste.test.ts` and
+`npm run build`, then publish the reviewed change. The browser loads the JSON
+from the site's base path and reloads it with the dashboard refresh. Dates and
+“today/tomorrow” follow Europe/Warsaw, including when a tab stays open overnight.
+Outside the validity period the card reports a missing current schedule. An empty
+remaining list means no further dates in this PDF, not a guarantee of no pickup.
