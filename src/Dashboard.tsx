@@ -7,6 +7,7 @@ import { cachedData, refreshData } from "./lib/browser-data";
 import AirForecast from "./components/AirForecast";
 import WaterSection from "./components/WaterSection";
 import EnvironmentExtras from "./components/EnvironmentExtras";
+import WasteSection from "./components/WasteSection";
 type Result = { data: any; loading: boolean; error: boolean };
 const empty: Result = { data: null, loading: true, error: false };
 const number = (v: any, decimals = 0) => v === null || v === undefined || !Number.isFinite(Number(v)) ? "—" : Number(v).toLocaleString("pl-PL", { maximumFractionDigits: decimals });
@@ -44,6 +45,7 @@ export default function Dashboard() {
  </section>
  <EnvironmentExtras weather={weather} refreshToken={checked}/>
  <WaterSection result={water}/>
- <footer><div><p>Dane pobiera Twoja przeglądarka przy otwarciu strony, co godzinę i po kliknięciu „Odśwież dane”. Ostatnie odczyty zachowuje lokalnie na tym urządzeniu. Czas wyświetlany dla Polski.</p></div><div className="footer-sources"><Source href="https://open-meteo.com/">Open-Meteo</Source><Source href="https://panel.syngeos.pl/sensor/pm10?device=10417">Syngeos</Source><Source href="https://danepubliczne.imgw.pl/">IMGW-PIB</Source></div><p className="attribution">Kod strony jest publicznie dostępny na portalu GitHub. <Source href="https://github.com/strzelcu/szczedrzyk">Zobacz repozytorium</Source></p><p className="attribution">Propozycje zmian można zgłaszać w <Source href="https://github.com/strzelcu/szczedrzyk/issues">GitHub Issues repozytorium</Source>.</p><p className="attribution">Dane Instytutu Meteorologii i Gospodarki Wodnej – Państwowego Instytutu Badawczego zostały przetworzone. Dane operacyjne mogą podlegać korektom.</p><p className="attribution">Strona została wygenerowana przez AI.</p></footer>
+ <WasteSection refreshToken={checked}/>
+ <footer><div><p>Dane pogodowe i pomiarowe pobiera Twoja przeglądarka przy otwarciu strony, co godzinę i po kliknięciu „Odśwież dane”. Ostatnie odczyty zachowuje lokalnie na tym urządzeniu. Czas wyświetlany dla Polski.</p></div><div className="footer-sources"><Source href="https://open-meteo.com/">Open-Meteo</Source><Source href="https://panel.syngeos.pl/sensor/pm10?device=10417">Syngeos</Source><Source href="https://danepubliczne.imgw.pl/">IMGW-PIB</Source></div><p className="attribution">Kod strony jest publicznie dostępny na portalu GitHub. <Source href="https://github.com/strzelcu/szczedrzyk">Zobacz repozytorium</Source></p><p className="attribution">Propozycje zmian można zgłaszać w <Source href="https://github.com/strzelcu/szczedrzyk/issues">GitHub Issues repozytorium</Source>.</p><p className="attribution">Dane Instytutu Meteorologii i Gospodarki Wodnej – Państwowego Instytutu Badawczego zostały przetworzone. Dane operacyjne mogą podlegać korektom.</p><p className="attribution">Strona została wygenerowana przez AI.</p></footer>
  </main></>;
 }

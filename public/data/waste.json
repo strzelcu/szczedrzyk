@@ -1,0 +1,419 @@
+{
+  "locality": "Szczedrzyk",
+  "housing": "single-family",
+  "validFrom": "2026-01-01",
+  "validUntil": "2026-12-31",
+  "verifiedAt": "2026-10-14",
+  "sourceUrl": "https://ozimek.pl/static/img/k01/DRO%20KH%20odpady/harmonogram%202026/rejon%207%20SZCZEDRZYK%2C%20JEDLICE.pdf",
+  "collections": [
+    {
+      "date": "2026-01-07",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "fractions": [
+        "glass"
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-01-29",
+      "fractions": [
+        "packaging",
+        "paper"
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "fractions": [
+        "packaging"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-03-12",
+      "fractions": [
+        "glass"
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "fractions": [
+        "packaging",
+        "paper"
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "fractions": [
+        "packaging"
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "fractions": [
+        "glass"
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "fractions": [
+        "bulky"
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "fractions": [
+        "packaging",
+        "paper"
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "fractions": [
+        "packaging"
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "fractions": [
+        "glass"
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "fractions": [
+        "packaging",
+        "paper"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "fractions": [
+        "packaging"
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "fractions": [
+        "glass"
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "fractions": [
+        "packaging",
+        "paper"
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "fractions": [
+        "packaging"
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "fractions": [
+        "glass"
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "fractions": [
+        "packaging",
+        "paper"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-12-03",
+      "fractions": [
+        "packaging"
+      ]
+    },
+    {
+      "date": "2026-12-04",
+      "fractions": [
+        "bio"
+      ]
+    },
+    {
+      "date": "2026-12-08",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-12-17",
+      "fractions": [
+        "glass"
+      ]
+    },
+    {
+      "date": "2026-12-21",
+      "fractions": [
+        "mixed"
+      ]
+    },
+    {
+      "date": "2026-12-31",
+      "fractions": [
+        "packaging",
+        "paper"
+      ]
+    }
+  ]
+}
