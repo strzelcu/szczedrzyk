@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ExternalLink, Trash2 } from "lucide-react";
-import { fractions, isWasteSchedule, polishDay, relativeDay, upcomingCollections, type Fraction, type WasteSchedule } from "../lib/waste";
+import { collectionsWithinWeek, fractions, isWasteSchedule, polishDay, relativeDay, upcomingCollections, type Fraction, type WasteSchedule } from "../lib/waste";
 
 const formatDate = (date: string) => new Intl.DateTimeFormat("pl-PL", { weekday: "long", day: "numeric", month: "long", timeZone: "Europe/Warsaw" }).format(new Date(date + "T12:00:00Z"));
 const shortDate = (date: string) => new Intl.DateTimeFormat("pl-PL", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Warsaw" }).format(new Date(date + "T12:00:00Z"));
@@ -26,7 +26,7 @@ export default function WasteSection({ refreshToken }: { refreshToken: string | 
   }, []);
   const upcoming = schedule ? upcomingCollections(schedule, today) : [];
   const current = schedule && today >= schedule.validFrom && today <= schedule.validUntil;
-  const next = upcoming[0];
+  const reminders = schedule ? collectionsWithinWeek(schedule, today) : [];
   return <section className="card waste-section" aria-labelledby="waste-title">
     <div className="section-heading"><h2 id="waste-title"><Trash2 size={20} aria-hidden="true" />Wywóz odpadów</h2><span className="pill neutral">Szczedrzyk · rejon 7</span></div>
     <p className="section-context">Zabudowa jednorodzinna</p>
@@ -34,7 +34,11 @@ export default function WasteSection({ refreshToken }: { refreshToken: string | 
     {!schedule && !error && <p role="status">Wczytywanie harmonogramu…</p>}
     {schedule && <>
       {!current ? <p className="error-note" role="status">Brak aktualnego harmonogramu. Dostępna wersja obejmuje okres {shortDate(schedule.validFrom)} – {shortDate(schedule.validUntil)}.</p> : <>
-        {next ? <div className="waste-next"><div><span className="pill good">{relativeDay(next.date, today)}</span><h3><time dateTime={next.date}>{formatDate(next.date)}</time></h3><p>{next.fractions.map(f => fractions[f]).join(" · ")}</p></div><p className="waste-reminder">Wystaw pojemniki lub worki do <strong>6:00 rano</strong> w dniu odbioru.</p></div> : <p>Brak kolejnych terminów w dostępnej wersji harmonogramu. Sprawdź nowe terminy na stronie gminy.</p>}
+        <p className="section-context"><strong>Wywozy w ciągu najbliższych 7 dni</strong></p>
+        {reminders.length ? <>
+          {reminders.map(entry => <div className="waste-next" key={entry.date}><div><span className="pill good">{relativeDay(entry.date, today)}</span><h3><time dateTime={entry.date}>{formatDate(entry.date)}</time></h3><p>{entry.fractions.map(f => fractions[f]).join(" · ")}</p></div></div>)}
+          <p className="waste-reminder">Wystaw pojemniki lub worki do <strong>6:00 rano</strong> w dniu odbioru.</p>
+        </> : <p>Brak wywozów w ciągu najbliższych 7 dni.</p>}
         <ul className="waste-fractions">{(Object.keys(fractions) as Fraction[]).map(f => {
           const entry = upcoming.find(e => e.fractions.includes(f));
           return <li key={f}><span className={`waste-dot waste-${f}`} aria-hidden="true" /><div><strong>{fractions[f]}</strong>{entry ? <><time dateTime={entry.date}>{formatDate(entry.date)}</time><span>{relativeDay(entry.date, today)}</span></> : <span>Brak kolejnego terminu w tym harmonogramie</span>}</div></li>;

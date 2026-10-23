@@ -22,6 +22,12 @@ export function upcomingCollections(schedule: WasteSchedule, today: string) {
     ? schedule.collections.filter(entry => entry.date >= today).sort((a, b) => a.date.localeCompare(b.date))
     : [];
 }
+export function collectionsWithinWeek(schedule: WasteSchedule, today: string) {
+  const end = new Date(today + "T12:00:00Z");
+  end.setUTCDate(end.getUTCDate() + 7);
+  const lastDay = end.toISOString().slice(0, 10);
+  return upcomingCollections(schedule, today).filter(entry => entry.date <= lastDay);
+}
 export function relativeDay(date: string, today: string) {
   const days = Math.round((Date.parse(date + "T12:00:00Z") - Date.parse(today + "T12:00:00Z")) / 86400000);
   return days === 0 ? "Dzisiaj" : days === 1 ? "Jutro" : `Za ${days} dni`;
