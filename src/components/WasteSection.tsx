@@ -31,14 +31,14 @@ export default function WasteSection({ refreshToken }: { refreshToken: string | 
     <div className="section-heading"><h2 id="waste-title"><Trash2 size={20} aria-hidden="true" />Wywóz odpadów</h2><span className="pill neutral">Szczedrzyk · rejon 7</span></div>
     <p className="section-context">Zabudowa jednorodzinna</p>
     {error && <p className="error-note" role="status">Nie udało się wczytać harmonogramu.{schedule ? " Widoczna jest wcześniej wczytana wersja." : " Sprawdź harmonogram gminy."}</p>}
-    {!schedule && !error && <p role="status">Wczytywanie harmonogramu…</p>}
+    {!schedule && !error && <p className="section-message" role="status">Wczytywanie harmonogramu…</p>}
     {schedule && <>
       {!current ? <p className="error-note" role="status">Brak aktualnego harmonogramu. Dostępna wersja obejmuje okres {shortDate(schedule.validFrom)} – {shortDate(schedule.validUntil)}.</p> : <>
         <p className="section-context"><strong>Wywozy w ciągu najbliższych 7 dni</strong></p>
         {reminders.length ? <>
           {reminders.map(entry => <div className="waste-next" key={entry.date}><div><span className="pill good">{relativeDay(entry.date, today)}</span><h3><time dateTime={entry.date}>{formatDate(entry.date)}</time></h3><p>{entry.fractions.map(f => fractions[f]).join(" · ")}</p></div></div>)}
           <p className="waste-reminder">Wystaw pojemniki lub worki do <strong>6:00 rano</strong> w dniu odbioru.</p>
-        </> : <p>Brak wywozów w ciągu najbliższych 7 dni.</p>}
+        </> : <p className="section-message">Brak wywozów w ciągu najbliższych 7 dni.</p>}
         <ul className="waste-fractions">{(Object.keys(fractions) as Fraction[]).map(f => {
           const entry = upcoming.find(e => e.fractions.includes(f));
           return <li key={f}><span className={`waste-dot waste-${f}`} aria-hidden="true" /><div><strong>{fractions[f]}</strong>{entry ? <><time dateTime={entry.date}>{formatDate(entry.date)}</time><span>{relativeDay(entry.date, today)}</span></> : <span>Brak kolejnego terminu w tym harmonogramie</span>}</div></li>;

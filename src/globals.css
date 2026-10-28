@@ -159,3 +159,98 @@ footer p{font-size:.8125rem}
 @media(max-width:640px){.air-chart g>text{font-size:24px}}
 
 .waste-section{margin-top:24px;padding:24px}.waste-next{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#eff5fa;border-radius:10px;padding:18px;margin-bottom:20px}.waste-next h3{margin:8px 0 4px;font-size:1.2rem}.waste-next p{margin:0}.waste-reminder{max-width:300px;color:#496b85;font-size:.875rem}.waste-fractions{list-style:none;padding:0;margin:0 0 20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.waste-fractions li{display:flex;gap:10px;padding:14px;background:#f8fafc;border:1px solid var(--border);border-radius:9px;min-width:0}.waste-fractions li div{display:flex;flex-direction:column;gap:4px;min-width:0}.waste-fractions time,.waste-fractions li div>span{font-size:.875rem;color:#526b80}.waste-dot{width:13px;height:13px;border-radius:50%;margin-top:5px;flex-shrink:0;border:1px solid #526b80}.waste-mixed{background:#333}.waste-packaging{background:#f6ce43}.waste-paper{background:#3484c5}.waste-glass{background:#3f9566}.waste-bio{background:#93603c}.waste-bulky{background:#8969a8}@media(max-width:900px){.waste-fractions{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.waste-section{padding:clamp(14px,4vw,22px);margin-top:18px}.waste-next{align-items:flex-start;flex-direction:column;gap:12px}.waste-fractions{grid-template-columns:1fr}.waste-reminder{max-width:none}}
+
+/* Shared typography and spacing across dashboard sections. */
+:root {
+  --dashboard-text-meta: .8125rem;
+  --dashboard-text-small: .875rem;
+  --dashboard-text-body: 1rem;
+  --dashboard-text-heading: 1.125rem;
+  --dashboard-text-topic: 1.25rem;
+  --dashboard-space-xs: 4px;
+  --dashboard-space-sm: 8px;
+  --dashboard-space-md: 16px;
+  --dashboard-space-lg: 24px;
+  --dashboard-card-padding: 24px;
+  --dashboard-section-gap: 24px;
+}
+body { font-size: var(--dashboard-text-body); line-height: 1.5; }
+.weather-card, .air-card, .forecast-card, .warnings-section,
+.hourly-section, .water-section, .environment-section, .waste-section {
+  padding: var(--dashboard-card-padding);
+}
+.air-card, .weather-group, .water-section, .environment-section, .waste-section,
+.hourly-section, .current-weather-column .hourly-section {
+  margin-top: var(--dashboard-section-gap);
+}
+.warnings-section { margin-bottom: var(--dashboard-section-gap); }
+.dashboard-grid, .water-grid { gap: var(--dashboard-section-gap); }
+.card h2, .card .card-title, .water-heading h2 {
+  font-size: var(--dashboard-text-heading);
+  line-height: 1.4;
+}
+.topic-title { font-size: var(--dashboard-text-topic); margin-bottom: var(--dashboard-space-md); }
+.water-station h3, .waste-next h3 {
+  font-size: var(--dashboard-text-body);
+  line-height: 1.5;
+  font-weight: 600;
+}
+.card-head, .section-heading, .water-heading { gap: var(--dashboard-space-md); margin-bottom: var(--dashboard-space-md); }
+.section-heading:has(+ .section-context) { margin-bottom: 0; }
+.card > p { margin: 0 0 var(--dashboard-space-md); }
+.card .section-context { font-size: var(--dashboard-text-small); margin: var(--dashboard-space-sm) 0 var(--dashboard-space-md); }
+.card .card-note, .card .water-note p, .card .waste-reminder,
+.card .section-message, .card .error-note {
+  font-size: var(--dashboard-text-small);
+  line-height: 1.5;
+}
+.card .card-note { margin: var(--dashboard-space-md) 0; }
+.card .section-message { margin: 0 0 var(--dashboard-space-md); }
+.card .error-note { margin: var(--dashboard-space-md) 0; padding: var(--dashboard-space-md); }
+.card .section-meta { font-size: var(--dashboard-text-meta); margin: var(--dashboard-space-md) 0 0; }
+.card-foot, .weather-foot, .card .card-foot, .card .weather-foot {
+  font-size: var(--dashboard-text-meta);
+  gap: var(--dashboard-space-sm);
+  margin-top: var(--dashboard-space-md);
+  padding-top: var(--dashboard-space-md);
+}
+.checked, .pollutant-time, .station-time, .forecast-day > div:first-child span,
+.forecast-rain, .aq-scale-labels, .pill, .neutral, footer p, .attribution {
+  font-size: var(--dashboard-text-meta);
+}
+.pollutant-time { font-size: var(--dashboard-text-meta) !important; }
+.source-link, .card-note, .section-context, .warning-kind,
+.chart-legend, .forecast-values summary, .water-heading p, .date-line {
+  font-size: var(--dashboard-text-small);
+}
+.aq-legend { font-size: var(--dashboard-text-small); margin: var(--dashboard-space-md) 0; }
+.aq-legend > p > span, .aq-legend > .aq-legend-note { font-size: var(--dashboard-text-meta); }
+.aq-legend > p, .aq-legend > .aq-legend-note { margin-bottom: var(--dashboard-space-sm); }
+.chart-legend { gap: var(--dashboard-space-md); margin-top: var(--dashboard-space-md); }
+.air-forecast { margin-top: var(--dashboard-space-lg); padding-top: var(--dashboard-space-lg); }
+.air-forecast .card-note { margin-top: var(--dashboard-space-md); }
+.hourly-scroll, .environment-metrics { margin-top: var(--dashboard-space-md); }
+.environment-metrics, .waste-fractions { gap: var(--dashboard-space-md); }
+.environment-metrics > div, .waste-fractions li div { gap: var(--dashboard-space-xs); }
+.water-station, .warning-entry, .water-note, .waste-next, .waste-fractions li { padding: var(--dashboard-space-md); }
+.water-note, .water-heading { margin-top: 0; }
+.water-note { margin-top: var(--dashboard-space-md); }
+.warning-entry { margin-top: var(--dashboard-space-md); }
+.warning-entry p { margin-top: var(--dashboard-space-md); }
+.waste-next { gap: var(--dashboard-space-md); margin-bottom: var(--dashboard-space-md); }
+.waste-next h3 { margin: var(--dashboard-space-sm) 0 var(--dashboard-space-xs); }
+.card .waste-reminder { max-width: none; margin: var(--dashboard-space-md) 0; }
+.waste-fractions { margin-bottom: var(--dashboard-space-md); }
+footer { gap: var(--dashboard-space-md); padding-top: var(--dashboard-space-lg); line-height: 1.5; }
+footer p { margin-top: var(--dashboard-space-sm); }
+@media (max-width: 760px) {
+  :root {
+    --dashboard-card-padding: clamp(14px, 4vw, 20px);
+    --dashboard-section-gap: 16px;
+  }
+  .air-forecast { margin-top: var(--dashboard-space-md); padding-top: var(--dashboard-space-md); }
+  .footer-sources { gap: var(--dashboard-space-sm) var(--dashboard-space-md); }
+}
+@media (min-width: 1001px) {
+  .weather-group .current-weather-column .hourly-section { margin-top: 0; }
+}
